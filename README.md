@@ -48,16 +48,16 @@ Included Exercises
 Technologies Used
 
 - HTML5: Core structure and semantic markup.
-- CSS3 (Vanilla): Custom styling via `styles.css` containing responsive design, typography, and layout utilities matching the previous design.
+- CSS3 (Vanilla): Embedded custom styling containing responsive design, typography, and layout utilities matching the previous design.
 
-How to Run
 
-1. Ensure both `exercise.html` and `styles.css` are in the same directory.
-2. Simply double-click the `exercise.html` file to open it in your default web browser.
-   OR
-3. Right-click the file -> "Open with" -> Select your preferred browser (Chrome, Firefox, Edge, etc.).
+Steps to Run the Project
+1.  Locate the `exercise.html` file in the project folder.
+2.  Double-click the file to open it in your default web browser (Chrome, Firefox, Edge, etc.).
+3.  Alternatively, right-click the file, select Open with and choose your preferred browser.
 
 Notes
 
 - Images are loaded from external sources (Unsplash), so an internet connection is recommended for images to display.
-- No external CSS frameworks or CDNs are required for styling; it is fully self-contained in `styles.css`.
+- No external CSS frameworks or CDNs are required for styling; it is fully self-contained within the HTML file.
+
