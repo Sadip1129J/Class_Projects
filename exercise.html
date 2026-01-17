@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Exercise Solutions</title>
+    <style>
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    margin: 0;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 2rem;
+    }
+}
+
+/* Layout Container */
+.container {
+    max-width: 56rem; /* approx 900px */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 2.5rem;
+    }
+}
+
+/* Headings */
+h1.main-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: #2563eb; /* Blue 600 */
+    margin-bottom: 2.5rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 2rem;
+}
+
+h2.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #374151; /* Gray 700 */
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Links */
+a.link {
+    color: #3b82f6;
+    text-decoration: underline;
+}
+
+a.link:hover {
+    color: #2563eb;
+}
+
+/* Exercise 1: Lists & Images */
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid-2-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+ul.list-disc {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+ol.list-decimal {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+}
+
+.img-container {
+    margin-top: 1rem;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Exercise 2: Forms */
+.form-container {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.space-y-6 > * + * {
+    margin-top: 1.5rem;
+}
+
+label.block-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-submit {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.feedback-msg {
+    color: #16a34a;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Exercise 3: Tables */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    border: 1px solid #374151;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+thead {
+    background-color: #2563eb;
+    color: white;
+}
+
+caption {
+    caption-side: top;
+    font-size: 1.125rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.bg-light-blue {
+    background-color: #eff6ff;
+    font-weight: bold;
+}
+
+.bg-gray-light {
+    background-color: #f3f4f6;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Exercise 4: Semantic Layout */
+.semantic-container {
+    border: 2px dashed #d1d5db;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.semantic-header {
+    background-color: #eff6ff;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3b82f6;
+}
+
+.semantic-header h3 {
+    margin: 0;
+    color: #1f2937;
+}
+
+.semantic-header p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+.semantic-nav {
+    display: flex;
+    gap: 1rem;
+    background-color: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.semantic-nav a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.semantic-nav a:hover {
+    text-decoration: underline;
+}
+
+.semantic-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .semantic-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.semantic-article {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.semantic-aside {
+    background-color: #fefce8;
+    padding: 1rem;
+    border: 1px solid #fef08a;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.semantic-aside h4 {
+    font-style: normal;
+    margin-top: 0;
+}
+
+.semantic-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.code-block {
+    margin-top: 1rem;
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    white-space: pre-wrap;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="main-title">HTML Portfolio Exercises</h1>
+
+        <!-- Exercise 1: Create a Simple Web Page -->
+        <section id="exercise-1">
+            <h2 class="section-title">Exercise 1: Simple Web Page</h2>
+            
+            <h1 style="font-size: 1.875rem; font-weight: 700; margin-bottom: 0.5rem;">Primary Heading (H1)</h1>
+            <h2 style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; color: #4b5563;">Secondary Heading (H2)</h2>
+            <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 1rem; color: #6b7280;">Tertiary Heading (H3)</h3>
+
+            <p>This is the first paragraph. It serves as an introduction to the basic structure of an HTML document, showing how text flows within paragraph tags.</p>
+            <p>The second paragraph demonstrates that HTML is white-space insensitive but respects the logical separation provided by block-level elements.</p>
+
+            <div class="grid-2-cols">
+                <div>
+                    <h4>Unordered List (Shopping List)</h4>
+                    <ul class="list-disc">
+                        <li>Fresh Organic Apples</li>
+                        <li>Whole Grain Bread</li>
+                        <li>Almond Milk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Ordered List (Morning Routine)</h4>
+                    <ol class="list-decimal">
+                        <li>Wake up at 6:00 AM</li>
+                        <li>Drink a glass of water</li>
+                        <li>30 minutes of meditation</li>
+                    </ol>
+                </div>
+            </div>
+
+            <p>
+                Check out this external resource: 
+                <a href="https://www.google.com" target="_blank" class="link">Visit Google</a>
+            </p>
+
+            <div class="img-container">
+                <h4>Embedded Image</h4>
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" 
+                     alt="Coding workspace" 
+                     class="img-responsive"
+                     onerror="this.src='https://via.placeholder.com/400x200?text=Image+Load+Failed'">
+            </div>
+        </section>
+
+        <!-- Exercise 2: Building a Form -->
+        <section id="exercise-2">
+            <h2 class="section-title">Exercise 2: User Registration Form</h2>
+            
+            <form action="#" method="POST" class="form-container space-y-6" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+                <div class="form-group">
+                    <label for="full-name" class="block-label">User's Name:</label>
+                    <input type="text" id="full-name" name="name" placeholder="Enter your full name" class="form-input">
+                </div>
+
+                <fieldset>
+                    <legend>Gender Selection:</legend>
+                    <div class="flex-group">
+                        <label class="radio-group">
+                            <input type="radio" name="gender" value="male"> Male
+                        </label>
+                        <label class="radio-group">
+                            <input type="radio" name="gender" value="female"> Female
+                        </label>
+                        <label class="radio-group">
+                            <input type="radio" name="gender" value="other"> Other
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Favorite Hobbies:</legend>
+                    <div class="flex-group">
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="hobbies" value="reading"> Reading
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="hobbies" value="gaming"> Gaming
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="hobbies" value="sports"> Sports
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="comments" class="block-label">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" class="form-textarea" placeholder="Write something..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Form</button>
+                
+                <p id="form-feedback" class="feedback-msg hidden">Form data submitted successfully (Simulation)!</p>
+            </form>
+        </section>
+
+        <!-- Exercise 3: HTML Tables -->
+        <section id="exercise-3">
+            <h2 class="section-title">Exercise 3: Information Table</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <caption>Table 1: Employee Geographic Distribution and Age Metrics</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Current City</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jonathan Smith</td>
+                            <td>28</td>
+                            <td>San Francisco</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Garcia</td>
+                            <td>34</td>
+                            <td>Madrid</td>
+                        </tr>
+                        <tr>
+                            <td>Kenji Sato</td>
+                            <td>41</td>
+                            <td>Tokyo</td>
+                        </tr>
+                        <!-- Cell spanning: Rowspan example -->
+                        <tr>
+                            <td rowspan="2" class="bg-light-blue">Managerial Group</td>
+                            <td>45</td>
+                            <td>Berlin</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="bg-gray-light">Remote Access Only (Spanning Columns)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercise 4: HTML Semantic Elements -->
+        <section id="exercise-4">
+            <h2 class="section-title">Exercise 4: Semantic Structure</h2>
+            
+            <div class="semantic-container">
+                <!-- Header: Defines introductory content or a set of navigational links -->
+                <header class="semantic-header">
+                    <h3>Semantic Web Explorer</h3>
+                    <p>Understanding the meaning behind the tags.</p>
+                </header>
+
+                <!-- Navigation: Section intended for navigation links -->
+                <nav class="semantic-nav">
+                    <a href="#exercise-1">Home</a>
+                    <a href="#exercise-2">About Us</a>
+                    <a href="#exercise-3">Portfolio</a>
+                    <a href="#exercise-4">Contact</a>
+                </nav>
+
+                <div class="semantic-grid">
+                    <!-- Article: Independent, self-contained content that makes sense on its own -->
+                    <article class="semantic-article">
+                        <h4 style="margin-top: 0;">The Power of Semantics</h4>
+                        <p>Using tags like &lt;article&gt; instead of &lt;div&gt; helps screen readers and search engines understand the document hierarchy.</p>
+                        <p>This allows for better accessibility and SEO ranking.</p>
+                    </article>
+
+                    <!-- Side Section: Content related to the primary content but tangentially related -->
+                    <aside class="semantic-aside">
+                        <h4>Quick Tip</h4>
+                        <p>Always use the &lt;alt&gt; attribute on images for accessibility!</p>
+                    </aside>
+                </div>
+
+                <!-- Footer: Information about the author, copyright, or contact details -->
+                <footer class="semantic-footer">
+                    <p>Designed by Gemini Assistant &bull; &copy; 2024 Coding Practice</p>
+                    <p>Contact: developer@example.com</p>
+                </footer>
+            </div>
+            
+            <div class="code-block">
+/* Explanation of Section Purposes:
+ * header: Identity of the site/section.
+ * nav: Links to move within or outside the site.
+ * article: The primary distinct piece of content.
+ * aside: Supportive or sidebar info.
+ * footer: Metadata and contact info.
+ */
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
